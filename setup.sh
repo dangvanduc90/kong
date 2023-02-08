@@ -18,6 +18,8 @@ sudo systemctl enable nginx
 sudo yum install node nodejs npm setroubleshoot -y
 sudo npm install -g pm2
 
+mkdir -p logs && touch logs/file.log && chmod -R 777 logs
+
 # disable ip v6
 sudo sed -i '/GRUB_CMDLINE_LINUX/ s/"$/ ipv6.disable=1"/' /etc/default/grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
